@@ -69,6 +69,15 @@ export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
             ":a": queryParams.actorName,
           },
         };
+      } else if ("name" in queryParams) {
+        commandInput = {
+          ...commandInput,
+          KeyConditionExpression: "movieId = :m and begins_with(actorName, :n)",
+          ExpressionAttributeValues: {
+            ":m": movieId,
+            ":n": queryParams.name,
+          },
+        };
       }
     } else {
       commandInput = {
