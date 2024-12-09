@@ -52,6 +52,6 @@ interface Car {
 getMatches<Bicycle>(bicycleShed, (b) => b.color == "Blue")
 getMatches<Car>(carpark, (b) => b.color == "Red")
 
-// logging it to the console to make sure it works
+// logging it to the console to make sure the function works
 console.log(getMatches<Bicycle>(bicycleShed, (b) => b.color == "Blue"))
 console.log(getMatches<Car>(carpark, (b) => b.color == "Red"))
